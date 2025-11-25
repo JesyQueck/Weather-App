@@ -43,6 +43,38 @@ header {
   flex-direction: column;
 }
 .search-text-hero h1 {
-  font-size: 40px;
+  font-size: 30px;
+  font-family: sansN;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input img {
+  position: absolute;
+  width: 20px;
+  margin-left: 2rem;
+}
+.input input {
+  padding: 0.8rem 1rem;
+  padding-left: 2rem;
+  width: 350px;
+  border-radius: 0.4rem;
+  background-color: hsl(243, 23%, 24%);
+  border: 0;
+  outline: 0;
+}
+.input ::placeholder {
+  color: hsl(0, 0%, 100%);
   font-family: bricolage;
 }
