@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><img src="./assets/images/logo.svg" alt="logo" /></div>
+      <div class="unit-dropdown">
+        <img src="./assets/images/icon-units.svg" alt="units" />
+        <select name="units" id="unit-id">
+          <span>Switch to Imperial</span>
+          <span>Temperature</span>
+          <option value="Celsius">Celsius(°C)</option>
+          <option value="Fahrenheit">Fahrenheit(°F)</option>
+          <hr />
+          <span>Wind Speed</span>
+          <option value="Km/h">Km/h</option>
+          <option value="mph">mph</option>
+          <hr />
+          <span>Precipitation</span>
+          <option value="Millimeters">Millimeters(mm)</option>
+          <option value="Inches">Inches(in)</option>
+        </select>
+      </div>
+    </header>
+    <main class="search-text-hero">
+      <h1>How's the sky looking today?</h1>
+      <div class="input-box">
+        <div class="input">
+          <img src="./assets/images/icon-search.svg" alt="icon-search" />
+          <input type="text" />
+        </div>
+        <button>Search</button>
+      </div>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>

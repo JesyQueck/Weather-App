@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: bricolage;
+  src: url(./assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\wdth\wght.ttf);
+}
+@font-face {
+  font-family: sansN;
+  src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
+}
+@font-face {
+  font-family: sansI;
+  src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
+}
+body {
+  background: hsl(248, 70%, 36%);
+  height: 100vh;
+  width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4rem 12rem;
+}
+.unit-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(243, 23%, 30%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  outline: 0;
+  border: 0;
+}
+.search-text-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.search-text-hero h1 {
+  font-size: 40px;
+  font-family: bricolage;
+}
