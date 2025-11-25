@@ -36,11 +36,29 @@
       <h1>How's the sky looking today?</h1>
       <div class="input-box">
         <div class="input">
-          <img src="./assets/images/icon-search.svg" alt="icon-search" />
           <input type="text" placeholder="Search for a place..." />
+          <img src="./assets/images/icon-search.svg" alt="icon-search" />
         </div>
         <button>Search</button>
       </div>
+      <section class="grid-container">
+        <div class="display-temp">
+          <div class="text-temp">
+            <h1 class="countryName">Berlin, Germany</h1>
+            <p class="currentDate">Tuesday, Aug 5, 2025</p>
+          </div>
+          <div class="digit-temp">
+            <img
+              src="./assets/images/icon-sunny.webp"
+              alt="icon"
+              class="temp-icon"
+            />
+          </div>
+        </div>
+        <div class="display-temp-value"></div>
+        <div class="display-daily"></div>
+        <div class="display-hourly"></div>
+      </section>
     </main>
     <script src="scripts.js"></script>
   </body>

@@ -16,7 +16,7 @@
   src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
 }
 body {
-  background: hsl(248, 70%, 36%);
+  background: hsl(243, 96%, 9%);
   height: 100vh;
   width: 100%;
 }
@@ -53,28 +53,40 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 .input {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 300px;
 }
 .input img {
   position: absolute;
-  width: 20px;
-  margin-left: 2rem;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 .input input {
-  padding: 0.8rem 1rem;
-  padding-left: 2rem;
-  width: 350px;
-  border-radius: 0.4rem;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  padding: 16px 16px 16px 55px;
   background-color: hsl(243, 23%, 24%);
-  border: 0;
-  outline: 0;
+  color: hsl(0, 0%, 100%);
 }
 .input ::placeholder {
   color: hsl(0, 0%, 100%);
   font-family: bricolage;
+}
+.search-text-hero button {
+  padding: 14px 20px;
+  background-color: hsl(233, 67%, 56%);
+  border-radius: 12px;
+  color: hsl(250, 6%, 84%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 0;
+  outline: 0;
 }
