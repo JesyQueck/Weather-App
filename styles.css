@@ -90,3 +90,47 @@ header {
   border: 0;
   outline: 0;
 }
+.grid-container {
+  margin: 4rem auto;
+  display: grid;
+}
+.display-temp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: url(./assets/images/bg-today-large.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 60px 15px;
+}
+.digit-temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-temp {
+  display: flex;
+  flex-direction: column;
+}
+.temp-icon {
+  width: 100px;
+  margin-left: 8rem;
+}
+.temp-value {
+  font-size: 80px;
+  color: hsl(0, 0%, 100%);
+}
+.text-temp .countryName {
+  font-size: 32px;
+  font-family: sansN;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+}
+.text-temp .currentDate {
+  font-size: 16px;
+  font-family: sansN;
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
