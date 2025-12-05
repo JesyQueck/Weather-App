@@ -97,13 +97,14 @@ header {
 .display-temp {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: url(./assets/images/bg-today-large.svg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  padding: 60px 15px;
+  border-radius: 16px;
+  padding: 60px 5px;
 }
 .digit-temp {
   display: flex;
@@ -116,7 +117,7 @@ header {
 }
 .temp-icon {
   width: 100px;
-  margin-left: 8rem;
+  margin: 0 2rem 0 10rem;
 }
 .temp-value {
   font-size: 80px;
