@@ -138,17 +138,23 @@ header {
 .display-temp-value {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   margin: 2rem auto;
 }
 .temp-grid {
-  display: flex;
-  flex-direction: column;
   background: hsl(243, 23%, 30%);
-  padding: 20px 40px;
+  width: 165px;
+  padding: 20px 60px 20px 20px;
+  border-radius: 10px;
+  text-align: left;
 }
 .temp-grid h2 {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 800;
   color: hsl(240, 6%, 70%);
+  margin-bottom: 1rem;
+}
+.temp-grid .value {
+  font-size: 30px;
+  color: hsl(0, 0%, 100%);
 }
