@@ -5,15 +5,15 @@
 }
 @font-face {
   font-family: bricolage;
-  src: url(./assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\wdth\wght.ttf);
+  src: url(/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf);
 }
 @font-face {
   font-family: sansN;
-  src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
+  src: url(/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
 }
 @font-face {
   font-family: sansI;
-  src: url(./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
+  src: url(/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf);
 }
 body {
   background: hsl(243, 96%, 9%);
@@ -24,7 +24,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 4rem 12rem;
+  margin: 4rem 12rem 2rem;
 }
 .unit-dropdown {
   display: flex;
@@ -43,7 +43,7 @@ header {
   flex-direction: column;
 }
 .search-text-hero h1 {
-  font-size: 30px;
+  font-size: 40px;
   font-family: sansN;
   color: hsl(0, 0%, 100%);
   font-weight: 600;
@@ -122,7 +122,8 @@ header {
 .temp-value {
   font-size: 80px;
   color: hsl(0, 0%, 100%);
-  font-style: italic;
+  font-family: sansI;
+  font-weight: 600;
 }
 .text-temp .countryName {
   font-size: 32px;
@@ -143,8 +144,9 @@ header {
   margin: 2rem auto;
 }
 .temp-grid {
-  background: hsl(243, 23%, 30%);
-  width: 165px;
+  background: hsl(243, 23%, 20%);
+  border: 1px soild hsl(240, 6%, 84%);
+  width: 170px;
   padding: 20px 60px 20px 20px;
   border-radius: 10px;
   text-align: left;
@@ -154,18 +156,22 @@ header {
   font-weight: 800;
   color: hsl(240, 6%, 70%);
   margin-bottom: 1rem;
+  font-family: sansN;
 }
 .temp-grid .value {
   font-size: 30px;
   color: hsl(0, 0%, 100%);
+  font-family: bricolage;
 }
 .display-daily {
   margin: 1.5rem 0 1rem;
+  width: 100%;
 }
 .daily_forecast {
-  font-size: 28px;
+  font-size: 22px;
   color: hsl(0, 0%, 100%);
   margin-bottom: 1rem;
+  font-family: sansN;
 }
 .display-forecast-value {
   display: flex;
@@ -175,8 +181,15 @@ header {
 }
 .forecast-grid {
   background-color: hsl(243, 23%, 30%);
+  border: 1px soild hsl(243, 23%, 24%);
   border-radius: 10px;
   padding: 8px 2px 8px 2px;
+}
+.forecast-grid h2 {
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: sansN;
 }
 .forecast-grid .temp-img {
   width: 55px;
@@ -187,5 +200,57 @@ header {
   justify-content: center;
   align-items: center;
   gap: 18px;
+  font-family: bricolage;
+  color: hsl(0, 0%, 100%);
+}
+.display-hourly {
+  background-color: hsl(243, 23%, 20%);
+  width: fit-content;
+  padding: 16px 18px;
+  border-radius: 10px;
+}
+.display-hourly .ttle-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.display-hourly .ttle-flex h2 {
+  font-size: 22px;
+  font-family: sansN;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+}
+.hourly-content {
+  display: flex;
+  flex-direction: column;
+  margin: 18px 10px;
+}
+.period-temp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(243, 23%, 24%);
+  border-radius: 10px;
+  border: 1pt solid hsl(243, 23%, 30%);
+  padding: 2px 16px;
+}
+.time-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time-img img {
+  width: 60px;
+}
+.time-img h3 {
+  font-size: 18px;
+  font-family: sansN;
+  color: hsl(0, 0%, 100%);
+}
+.period-temp h4 {
+  font-size: 18px;
+  font-family: sansN;
+  font-weight: 400;
   color: hsl(0, 0%, 100%);
 }
