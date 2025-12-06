@@ -26,16 +26,171 @@ header {
   justify-content: space-between;
   margin: 4rem 12rem 2rem;
 }
+/* ============================================
+   UNIT DROPDOWN - Custom Dropdown Menu
+   ============================================ */
+
 .unit-dropdown {
+  position: relative;
+}
+
+/* Hide the checkbox */
+.dropdown-toggle {
+  display: none;
+}
+
+/* Dropdown button */
+.dropdown-button {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: hsl(243, 23%, 30%);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  outline: 0;
-  border: 0;
+  gap: 10px;
+  background-color: hsl(243, 23%, 24%);
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid hsl(243, 23%, 30%);
+  transition: background-color 0.2s ease;
 }
+
+.dropdown-button:hover {
+  background-color: hsl(243, 23%, 28%);
+}
+
+.dropdown-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-button span {
+  color: hsl(0, 0%, 100%);
+  font-family: sansN;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.dropdown-button svg {
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.dropdown-toggle:checked + .dropdown-button svg {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: hsl(243, 23%, 24%);
+  border: 1px solid hsl(243, 23%, 30%);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Show menu when checkbox is checked */
+.dropdown-toggle:checked ~ .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown header */
+.dropdown-header {
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.dropdown-header span {
+  color: hsl(0, 0%, 100%);
+  font-family: sansN;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* Section title */
+.section-title {
+  color: hsl(240, 6%, 70%);
+  font-family: sansN;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown section */
+.dropdown-section {
+  margin-bottom: 4px;
+}
+
+/* Dropdown item */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.dropdown-item:hover {
+  background-color: hsl(243, 23%, 28%);
+}
+
+/* Hide radio buttons */
+.dropdown-item input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropdown-item span {
+  color: hsl(0, 0%, 100%);
+  font-family: sansN;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Checkmark - hidden by default */
+.dropdown-item .checkmark {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show checkmark when radio is checked */
+.dropdown-item input[type='radio']:checked ~ .checkmark {
+  opacity: 1;
+}
+
+/* Divider */
+.dropdown-divider {
+  height: 1px;
+  background-color: hsl(243, 23%, 30%);
+  margin: 12px 0;
+}
+
+/* Close dropdown when clicking outside */
+.dropdown-toggle:checked ~ .dropdown-menu::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 .search-text-hero {
   display: flex;
   align-items: center;
@@ -320,4 +475,406 @@ header {
   font-family: sansN;
   font-weight: 600;
   color: hsl(0, 0%, 100%);
+}
+
+@media (max-width: 1399px) {
+  .grid-container {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+  }
+
+  header {
+    margin: 3rem 8rem 2rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .grid-container {
+    max-width: 960px;
+    column-gap: 24px;
+  }
+
+  header {
+    margin: 3rem 4rem 2rem;
+  }
+
+  .display-temp {
+    padding: 50px 30px;
+  }
+
+  .temp-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .temp-value {
+    font-size: 70px;
+  }
+
+  .text-temp .countryName {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .grid-container {
+    max-width: 720px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 24px;
+  }
+
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .item3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .item4 {
+    grid-column: 1;
+    grid-row: 4;
+    height: auto;
+  }
+
+  .display-hourly {
+    height: auto;
+    max-height: 500px;
+  }
+
+  header {
+    margin: 2rem 3rem 1.5rem;
+  }
+
+  .search-text-hero h1 {
+    font-size: 36px;
+  }
+
+  .display-temp-value {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .display-temp {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 30px;
+  }
+
+  .digit-temp {
+    flex-direction: row;
+  }
+
+  .temp-icon {
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    margin: 2rem 2rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-text-hero h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .input-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .search-text-hero button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .grid-container {
+    padding: 0 1.5rem;
+  }
+
+  .display-temp {
+    padding: 30px 20px;
+  }
+
+  .text-temp .countryName {
+    font-size: 24px;
+  }
+
+  .text-temp .currentDate {
+    font-size: 14px;
+  }
+
+  .temp-value {
+    font-size: 60px;
+  }
+
+  .temp-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .display-temp-value {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .temp-grid {
+    padding: 16px;
+  }
+
+  .temp-grid .value {
+    font-size: 28px;
+  }
+
+  .daily_forecast {
+    font-size: 20px;
+  }
+
+  .forecast-grid {
+    min-width: 80px;
+    padding: 16px 12px;
+  }
+
+  .forecast-grid .temp-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .display-hourly {
+    padding: 20px 16px;
+  }
+
+  .ttle-flex h2 {
+    font-size: 20px;
+  }
+
+  .period-temp {
+    padding: 12px 14px;
+  }
+
+  .time-img img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .time-img h3 {
+    font-size: 16px;
+  }
+
+  .period-temp h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  header {
+    margin: 1.5rem 1rem 1rem;
+  }
+
+  .search-text-hero h1 {
+    font-size: 28px;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid-container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    row-gap: 20px;
+  }
+
+  .display-temp {
+    padding: 25px 16px;
+  }
+
+  .text-temp .countryName {
+    font-size: 22px;
+  }
+
+  .temp-value {
+    font-size: 56px;
+  }
+
+  .temp-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .display-temp-value {
+    gap: 10px;
+  }
+
+  .temp-grid {
+    padding: 14px;
+  }
+
+  .temp-grid h2 {
+    font-size: 13px;
+  }
+
+  .temp-grid .value {
+    font-size: 24px;
+  }
+
+  .forecast-grid {
+    min-width: 75px;
+    padding: 14px 10px;
+  }
+
+  .forecast-grid h2 {
+    font-size: 14px;
+  }
+
+  .forecast-grid .temp-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .forecast-grid .flex-value {
+    font-size: 14px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 479px) {
+  .search-text-hero h1 {
+    font-size: 24px;
+  }
+
+  .grid-container {
+    padding: 0 0.75rem;
+  }
+
+  .display-temp {
+    padding: 20px 12px;
+  }
+
+  .text-temp .countryName {
+    font-size: 20px;
+  }
+
+  .text-temp .currentDate {
+    font-size: 13px;
+  }
+
+  .temp-value {
+    font-size: 48px;
+  }
+
+  .temp-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .display-temp-value {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .temp-grid {
+    padding: 12px;
+  }
+
+  .temp-grid .value {
+    font-size: 22px;
+  }
+
+  .daily_forecast {
+    font-size: 18px;
+  }
+
+  .forecast-grid {
+    min-width: 70px;
+    padding: 12px 8px;
+  }
+
+  .forecast-grid h2 {
+    font-size: 13px;
+  }
+
+  .forecast-grid .temp-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .display-hourly {
+    padding: 16px 12px;
+  }
+
+  .ttle-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ttle-flex h2 {
+    font-size: 18px;
+  }
+
+  .ttle-flex select {
+    width: 100%;
+  }
+
+  .period-temp {
+    padding: 10px 12px;
+  }
+
+  .time-img img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .time-img h3 {
+    font-size: 15px;
+  }
+
+  .period-temp h4 {
+    font-size: 16px;
+  }
+
+  .dropdown-menu {
+    right: auto;
+    left: 0;
+    min-width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .grid-container {
+    margin: 2rem auto;
+  }
+
+  header {
+    margin: 1.5rem 2rem 1rem;
+  }
+
+  .search-text-hero h1 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+
+  .display-temp {
+    padding: 30px 20px;
+  }
+
+  .display-hourly {
+    max-height: 400px;
+  }
 }
