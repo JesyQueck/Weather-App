@@ -26,20 +26,14 @@ header {
   justify-content: space-between;
   margin: 4rem 12rem 2rem;
 }
-/* ============================================
-   UNIT DROPDOWN - Custom Dropdown Menu
-   ============================================ */
 
 .unit-dropdown {
   position: relative;
 }
 
-/* Hide the checkbox */
 .dropdown-toggle {
   display: none;
 }
-
-/* Dropdown button */
 .dropdown-button {
   display: flex;
   align-items: center;
@@ -73,12 +67,9 @@ header {
   transition: transform 0.3s ease;
 }
 
-/* Rotate arrow when open */
 .dropdown-toggle:checked + .dropdown-button svg {
   transform: rotate(180deg);
 }
-
-/* Dropdown menu */
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 8px);
@@ -96,14 +87,11 @@ header {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Show menu when checkbox is checked */
 .dropdown-toggle:checked ~ .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
-/* Dropdown header */
 .dropdown-header {
   padding: 8px 12px;
   margin-bottom: 12px;
@@ -127,12 +115,9 @@ header {
   letter-spacing: 0.5px;
 }
 
-/* Dropdown section */
 .dropdown-section {
   margin-bottom: 4px;
 }
-
-/* Dropdown item */
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -147,8 +132,6 @@ header {
 .dropdown-item:hover {
   background-color: hsl(243, 23%, 28%);
 }
-
-/* Hide radio buttons */
 .dropdown-item input[type='radio'] {
   position: absolute;
   opacity: 0;
@@ -161,26 +144,19 @@ header {
   font-size: 15px;
   font-weight: 400;
 }
-
-/* Checkmark - hidden by default */
 .dropdown-item .checkmark {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
-
-/* Show checkmark when radio is checked */
 .dropdown-item input[type='radio']:checked ~ .checkmark {
   opacity: 1;
 }
 
-/* Divider */
 .dropdown-divider {
   height: 1px;
   background-color: hsl(243, 23%, 30%);
   margin: 12px 0;
 }
-
-/* Close dropdown when clicking outside */
 .dropdown-toggle:checked ~ .dropdown-menu::before {
   content: '';
   position: fixed;
