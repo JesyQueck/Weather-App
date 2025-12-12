@@ -5,12 +5,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const mpBut = document.querySelector('.mpBut');
   const mmBut = document.querySelector('.mmBut');
   const inBut = document.querySelector('.inBut');
-  const CelFah = document.querySelector('.cel-fah');
-  const kmMph = document.querySelector('.km-mph');
+  const CelFah = document.querySelector('.cel-fah-value ');
+  const humidityValue = document.querySelector('.humidity-value');
+  const kmMphValue = document.querySelector('.km-mph-value');
+  const precpValue = document.querySelector('.precp-value');
+  const cityNameValue = document.querySelector('.countryName');
   const searchBtn = document.querySelector('.searchButton');
+  const cityInput = document.querySelector('#cityInput');
+  if (!searchBtn) {
+    console.error(
+      'Search button not found! Make sure you have an element with class "searchButton"'
+    );
+    return;
+  }
+
+  if (!cityInput) {
+    console.error(
+      'City input not found! Make sure you have an input with id "cityInput"'
+    );
+    return;
+  }
+
+  if (!CelFah) {
+    console.error(
+      'CelFah element not found! Make sure you have an element with class "cel-fah"'
+    );
+    return;
+  }
 
   async function handleSearch() {
-    searchBtn.value = cityName;
+    const cityName = cityInput.value.trim();
 
     if (!cityName) {
       alert('Please enter a city name');
@@ -30,17 +54,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const latitude = geoData.results[0].latitude;
       const longitude = geoData.results[0].longitude;
+      const cityName2 = geoData.results[0].name;
 
       const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&hourly=temperature_2m&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m`;
 
       const weatherResponse = await fetch(weatherUrl);
       const data = await weatherResponse.json();
 
-      console.log('Current Weather:');
-      console.log(`Temperature: ${data.current.temperature_2m}°C`);
-      console.log(`Humidity: ${data.current.relative_humidity_2m}%`);
-      console.log(`Precipitation: ${data.current.precipitation}mm`);
-      console.log(`Wind Speed: ${data.current.wind_speed_10m}km/h`);
+      CelFah.textContent = `${Math.round(data.current.temperature_2m)}°C`;
+      cityNameValue.textContent = `${cityName2}`;
+      humidityValue.textContent = `${data.current.relative_humidity_2m}%`;
+      precpValue.textContent = `${data.current.precipitation}mm`;
+      kmMphValue.textContent = `${data.current.wind_speed_10m}km/h`;
 
       console.log('\nHourly Forecast (Next 24 Hours):');
       for (let i = 0; i < 24; i++) {
@@ -61,16 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* celBut.addEventListener('click', function () {
-    CelFah.innerHTML = 'Celsius';
+  searchBtn.addEventListener('click', handleSearch);
+
+  cityInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   });
-   fahBut.addEventListener('click', function () {
-    CelFah.innerHTML = 'Farenheit';
-  });
-  kmBut.addEventListener('click', function () {
-    kmMph.innerHTML = 'kmmmm';
-  });
-  mmBut.addEventListener('click', function () {});
-  mpBut.addEventListener('click', function () {});
-  inBut.addEventListener('click', function () {}); */
 });
