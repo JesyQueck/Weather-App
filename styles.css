@@ -684,13 +684,13 @@ header {
   }
 
   .grid-container {
-    margin: 2rem auto;
+    margin: 1.5rem auto;
+    width: 100%;
     padding: 0 1rem;
     row-gap: 20px;
   }
 
   .display-temp {
-    padding: 25px 16px;
     background: url(assets/images//bg-today-small.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -698,7 +698,7 @@ header {
   }
 
   .text-temp .countryName {
-    font-size: 22px;
+    font-size: 28px;
     margin-bottom: 10px;
   }
   .text-temp {
@@ -729,7 +729,10 @@ header {
   .temp-grid .value {
     font-size: 24px;
   }
-
+  .display-forecast-value {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .forecast-grid {
     min-width: 75px;
     padding: 14px 10px;
@@ -762,11 +765,11 @@ header {
   }
 
   .display-temp {
-    padding: 25px 12px;
+    width: ;
   }
 
   .text-temp .countryName {
-    font-size: 20px;
+    font-size: 30 px;
   }
 
   .text-temp .currentDate {
@@ -783,7 +786,6 @@ header {
   }
 
   .display-temp-value {
-    grid-template-columns: 1fr;
     gap: 10px;
   }
 

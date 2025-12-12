@@ -30,13 +30,13 @@
     <div class="dropdown-section">
       <div class="section-title">Temperature</div>
       <label class="dropdown-item">
-        <input type="radio" name="temperature" value="celsius" checked />
-        <span>Celsius (°C)</span>
+        <input type="radio"  name="temperature" value="celsius"/>
+        <span class="celBut">Celsius (°C)</span>
         
       </label>
       <label class="dropdown-item">
-        <input type="radio" name="temperature" value="fahrenheit" />
-        <span>Fahrenheit (°F)</span>
+        <input type="radio"  name="temperature" value="fahrenheit"/>
+        <span class="fahBut">Fahrenheit (°F)</span>
        
       </label>
     </div>
@@ -46,13 +46,13 @@
     <div class="dropdown-section">
       <div class="section-title">Wind Speed</div>
       <label class="dropdown-item">
-        <input type="radio" name="wind" value="kmh" checked />
+        <input type="radio"  name="wind" value="kmh"/>
         <span>km/h</span>
       
       </label>
       <label class="dropdown-item">
         <input type="radio" name="wind" value="mph" />
-        <span>mph</span>
+        <span class="mpBut">mph</span>
       </label>
     </div>
     
@@ -61,11 +61,11 @@
     <div class="dropdown-section">
       <div class="section-title">Precipitation</div>
       <label class="dropdown-item">
-        <input type="radio" name="precipitation" value="mm" checked />
+        <input type="radio" class="mmBut" name="precipitation" value="mm" checked />
         <span>Millimeters (mm)</span>
       </label>
       <label class="dropdown-item">
-        <input type="radio" name="precipitation" value="in" />
+        <input type="radio" class="inBut" name="precipitation" value="in" />
         <span>Inches (in)</span>
       </label>
     </div>
@@ -79,14 +79,14 @@
           <input type="text" placeholder="Search for a place..." />
           <img src="./assets/images/icon-search.svg" alt="icon-search" />
         </div>
-        <button>Search</button>
+        <button class="searchButton">Search</button>
       </div>
       <section class="grid-container">
         <div class="display-temp item1">
           <div class="text-temp">
             <h1 class="countryName">Berlin, Germany</h1>
-            <p class="currentDate">Tuesday, Aug 5, 2025</p>
-          </div>
+            <p   class="currentDate">Tuesday, Aug 5, 2025</p>
+          </div>  
           <div class="digit-temp">
             <img
               src="./assets/images/icon-sunny.webp"
@@ -99,7 +99,7 @@
         <div class="display-temp-value item2">
           <div class="temp-grid">
             <h2>Feels like</h2>
-            <span class="value">18°</span>
+            <span class="value cel-fah">18°</span>
           </div>
           <div class="temp-grid">
             <h2>Humidity</h2>
@@ -107,7 +107,7 @@
           </div>
           <div class="temp-grid">
             <h2>Wind</h2>
-            <span class="value">14Km/h</span>
+            <span class="value km-mph">14Km/h</span>
           </div>
           <div class="temp-grid">
             <h2>Precipitation</h2>
